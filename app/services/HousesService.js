@@ -1,8 +1,10 @@
 import { AppState } from "../AppState.js";
 import { House } from "../models/House.js";
+import { Pop } from "../utils/Pop.js";
 import { api } from "./AxiosService.js";
 
 class HousesService {
+
     constructor() {
         console.log('Houses Service init');
         this.getHouses()
@@ -20,6 +22,17 @@ class HousesService {
         let houses = response.data.map(house => new House(house))
         AppState.houses = houses
         console.log(AppState.houses)
+
+    }
+
+    async createHouse(houseData) {
+        try {
+            let response = await api.post('api/houses', houseData)
+            let house = new House(response.data)
+            AppState.houses.push(house)
+        } catch (error) {
+            Pop.error(`failed to add house ${error}`)
+        }
 
     }
 }
