@@ -21,3 +21,9 @@
   border-style: solid;
   border-width: 2px;
 }
+
+.img-sizing {
+  height: 100%;
+  max-width: 30vh;
+  aspect-ratio: 1/1;
+}
