@@ -4,14 +4,8 @@ import { setHTML } from "../utils/Writer.js";
 
 export class HousesController {
     constructor() {
-        // AppState.on('houses', this.drawHouses)
+        AppState.on('houses', this.drawHouses)
         console.log('house controller init');
-        this.getHouses()
-    }
-
-    async getHouses() {
-        await housesService.getHouses()
-        this.drawHouses()
     }
 
     drawHouses() {

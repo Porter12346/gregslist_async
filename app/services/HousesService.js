@@ -5,7 +5,7 @@ import { api } from "./AxiosService.js";
 class HousesService {
     constructor() {
         console.log('Houses Service init');
-        // this.getHouses()
+        this.getHouses()
     }
 
     async getHouses() {
