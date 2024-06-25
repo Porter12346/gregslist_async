@@ -28,8 +28,14 @@ export class HousesController {
         } catch (error) {
             Pop.error('failed to add house')
         }
+    }
 
-        
-
+    destroyHouse(id) {
+        console.log('destroying house');
+        try {
+            housesService.destroyHouse(id)
+        } catch (error) {
+            Pop.error('failed to destroy house')
+        }
     }
 }

@@ -9,6 +9,7 @@ export class House {
         this.description = data.description
         this.creatorId = data.creatorId
         this.creator = data.creator
+        this.id = data.id
     }
 
     get htmlTemplate() {
@@ -25,6 +26,7 @@ export class House {
                     <p>${this.description}</p>
                     <p>listed by: ${this.creator.name}</p>
                 </div>
+                <button onclick="app.HousesController.destroyHouse('${this.id}')"></button>
             </div>`)
     }
 }

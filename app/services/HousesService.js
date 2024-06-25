@@ -5,6 +5,7 @@ import { api } from "./AxiosService.js";
 
 class HousesService {
 
+
     constructor() {
         console.log('Houses Service init');
         this.getHouses()
@@ -32,6 +33,16 @@ class HousesService {
             AppState.houses.push(house)
         } catch (error) {
             Pop.error(`failed to add house ${error}`)
+        }
+
+    }
+
+    destroyHouse(houseId) {
+        try {
+            let response = api.delete(`api/houses/${houseId}`,)
+            console.log(response);
+        } catch (error) {
+            Pop.error(error)
         }
 
     }
