@@ -10,7 +10,7 @@ export class HousesController {
 
     drawHouses() {
         let houses = AppState.houses
-        let injectString
+        let injectString = ''
         houses.forEach(house => {
             injectString += house.htmlTemplate
         });
