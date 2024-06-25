@@ -10,6 +10,23 @@ export class House {
         this.creatorId = data.creatorId
         this.creator = data.creator
     }
+
+    get htmlTemplate() {
+        return (`<div class="col-12 d-flex border border-3 border-dark shadow shadow-5 p-0">
+                <img src="${this.imgUrl}"
+                    alt="a house" class="img-fluid img-sizing">
+                <div class="p-4">
+                    <h2>${this.bedrooms} Bedrooms, ${this.bathrooms} bathrooms</h2>
+                    <h3>${this.levels} story</h3>
+                    <h2>$${this.price}</h2>
+                </div>
+                <div class="py-4">
+                    <p>built in 1982</p>
+                    <p>${this.description}</p>
+                    <p>listed by: ${this.creator.name}</p>
+                </div>
+            </div>`)
+    }
 }
 
 // bedrooms: Number, required
